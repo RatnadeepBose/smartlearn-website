@@ -118,19 +118,21 @@
             transform-origin: 1px;
         }
 
-       /* Hero Section */
+   /* Hero Section */
 .hero {
     background: 
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url("https://img.freepik.com/free-photo/view-school-classroom_23-2151031927.jpg?semt=ais_incoming&w=740&q=80") 
-        no-repeat center center / cover;
+        no-repeat center center;
+    background-size: cover;   /* ensures full coverage */
     height: 80vh;
     display: flex;
     align-items: center;
-    justify-content: center; /* optional, for horizontal centering */
+    justify-content: center;
     position: relative;
     color: white;
 }
+
 
         .hero-content {
             position: relative;
