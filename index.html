@@ -180,49 +180,23 @@
             gap: 3rem;
         }
 
-     .teacher-img {
-    flex: 1;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    background-color: var(--primary);
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-}
+        .teacher-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--primary);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
 
-.teacher-img img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* ensures image fills container without distortion */
-    border-radius: 10px;
-}
-
-.about-content {
-    flex: 2;
-    padding-left: 30px; /* adds spacing from image */
-}
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-    .about {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-content {
-        padding-left: 0;
-        margin-top: 20px;
-    }
-
-    .teacher-img {
-        min-height: 250px;
-    }
-}
-
+        .about-content {
+            flex: 2;
+        }
 
         .about-content h2 {
             font-size: 2.5rem;
@@ -686,15 +660,15 @@
     </section>
 
     <!-- About Section -->
-  <section id="about" class="about">
-    <div class="teacher-img">
-        <img src="smartlearn-website/images/ratnadeep.png" alt="Ratnadeep Bose" class="teacher-photo">
-    </div>
-    <div class="about-content">
-        <h2>About Me</h2>
-        <p>Hello, I'm Ratnadeep Bose, the founder and sole teacher at SmartLearnAcademy. With a passion for teaching and years of experience, I'm dedicated to helping students excel in their academic journey.</p>
-    </div>
-</section>
+    <section id="about" class="about">
+        <div class="container about-container">
+            <div class="teacher-img">
+                <p>Teacher's Image</p>
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>Hello, I'm Ratnadeep Bose, the founder and sole teacher at SmartLearnAcademy. With a passion for teaching and years of experience, I'm dedicated to helping students excel in their academic journey.</p>
+                
                 <h3>My Qualifications</h3>
                 <ul class="qualifications">
                     <li><i class="fas fa-graduation-cap"></i> Bachelor's Degree in English Literature</li>
