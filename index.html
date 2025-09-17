@@ -56,15 +56,13 @@
 
         .header-container {
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
-            gap: 2rem;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            margin-right: auto;
         }
 
         .logo h1 {
@@ -565,12 +563,8 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .header-container {
-                justify-content: space-between;
-                gap: 0;
-            }
-            
-            .logo {
-                margin-right: 0;
+                flex-direction: row;
+                text-align: left;
             }
             
             nav ul {
