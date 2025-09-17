@@ -7,559 +7,623 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-            :root {
-    --primary: #1a56db;        /* Deep royal blue - conveys trust and excellence */
-    --secondary: #1f2937;      /* Dark charcoal - sophisticated and professional */
-    --accent: #d97706;         /* Warm amber/gold - premium accent color */
-    --light: #f9fafb;          /* Very light gray - clean background */
-    --dark: #111827;           /* Near black - for text */
-    --success: #059669;        /* Emerald green - success color */
-    --cream: #f3f4f6;          /* Soft cream - alternative light background */
-    --gold-light: #fef3c7;     /* Light gold - for highlights */
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    color: var(--dark);
-    line-height: 1.6;
-    background-color: var(--light);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 1rem;
-    color: var(--secondary);
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Header Styles */
-header {
-    background: linear-gradient(135deg, var(--primary) 0%, #0d3e9e 100%);
-    color: white;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo h1 {
-    font-size: 1.8rem;
-    color: white;
-    margin: 0;
-}
-
-.logo span {
-    color: var(--accent);
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 1.5rem;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--gold-light);
-}
-
-/* Hero Section */
-.hero {
-    background: url('https://img.freepik.com/premium-photo/international-day-education-stage-moment-special-needs-classroom_950002-527269.jpg?semt=ais_incoming&w=740&q=80') no-repeat center center/cover;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    color: white;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    padding: 2rem;
-}
-
-.hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: white;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.btn {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn:hover {
-    background: #b45309;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* About Section */
-.about {
-    padding: 5rem 0;
-    background: linear-gradient(to bottom, var(--light) 0%, white 100%);
-}
-
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-}
-
-.teacher-img {
-    flex: 1;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.teacher-img img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.about-content {
-    flex: 2;
-}
-
-.about-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary);
-}
-
-.qualifications {
-    margin: 1.5rem 0;
-}
-
-.qualifications li {
-    margin-bottom: 0.5rem;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-}
-
-.qualifications li i {
-    color: var(--accent);
-    margin-right: 10px;
-}
-
-/* Subjects Section */
-.subjects {
-    padding: 5rem 0;
-    background: var(--cream);
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.section-title h2 {
-    font-size: 2.5rem;
-    color: var(--primary);
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
-}
-
-.section-title h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: var(--accent);
-}
-
-.subjects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.subject-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s;
-    border-top: 4px solid var(--primary);
-}
-
-.subject-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.subject-icon {
-    background: linear-gradient(135deg, var(--primary) 0%, #0d3e9e 100%);
-    color: white;
-    font-size: 2rem;
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.subject-content {
-    padding: 1.5rem;
-}
-
-.subject-content h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-/* Testimonials */
-.testimonials {
-    padding: 5rem 0;
-    background: linear-gradient(to bottom, white 0%, var(--cream) 100%);
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.testimonial-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-    border-left: 4px solid var(--accent);
-}
-
-.testimonial-card::before {
-    content: '\201C';
-    font-size: 5rem;
-    color: var(--primary);
-    opacity: 0.1;
-    position: absolute;
-    top: -10px;
-    left: 10px;
-}
-
-.testimonial-text {
-    margin-bottom: 1.5rem;
-    font-style: italic;
-}
-
-.student-info {
-    display: flex;
-    align-items: center;
-}
-
-.student-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 1rem;
-}
-
-.student-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Fees Section */
-.fees {
-    padding: 5rem 0;
-    background: var(--cream);
-}
-
-.fees-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--gold-light);
-}
-
-.fee-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
-}
-
-.fee-item:last-child {
-    border-bottom: none;
-}
-
-.fee-amount {
-    color: var(--primary);
-    font-weight: 700;
-}
-
-/* Contact Section */
-.contact {
-    padding: 5rem 0;
-    background: white;
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-}
-
-.contact-info {
-    background: linear-gradient(135deg, var(--secondary) 0%, #111827 100%);
-    color: white;
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.contact-info h3 {
-    color: white;
-    margin-bottom: 1.5rem;
-}
-
-.contact-detail {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-.contact-detail i {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    color: var(--accent);
-}
-
-.contact-form {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.15);
-    outline: none;
-}
-
-.form-group textarea {
-    min-height: 150px;
-}
-
-/* Footer */
-footer {
-    background: linear-gradient(135deg, var(--secondary) 0%, #111827 100%);
-    color: white;
-    padding: 3rem 0 1rem;
-}
-
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.footer-section h3 {
-    color: white;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-section h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background: var(--accent);
-}
-
-.footer-links {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 0.8rem;
-}
-
-.footer-links a {
-    color: #ddd;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: var(--primary);
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border-radius: 50%;
-    transition: all 0.3s;
-}
-
-.social-links a:hover {
-    background: var(--accent);
-    transform: translateY(-3px);
-}
-
-.copyright {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    nav ul {
-        margin-top: 1rem;
-    }
-    
-    .about-container {
-        flex-direction: column;
-    }
-    
-    .hero-content h2 {
-        font-size: 2rem;
-    }
-    
-    .hero-content p {
-        font-size: 1rem;
-    }
-}
-
-/* Premium text selection color */
-::selection {
-    background: var(--accent);
-    color: white;
-}
-
-/* Custom scrollbar for premium feel */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--light);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #0d3e9e;
-}
+        :root {
+            --primary: #1a56db;        /* Deep royal blue - conveys trust and excellence */
+            --secondary: #1f2937;      /* Dark charcoal - sophisticated and professional */
+            --accent: #d97706;         /* Warm amber/gold - premium accent color */
+            --light: #f9fafb;          /* Very light gray - clean background */
+            --dark: #111827;           /* Near black - for text */
+            --success: #059669;        /* Emerald green - success color */
+            --cream: #f3f4f6;          /* Soft cream - alternative light background */
+            --gold-light: #fef3c7;     /* Light gold - for highlights */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0d3e9e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: white;
+            margin: 0;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold-light);
+        }
+
+        /* Mobile menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 2rem;
+            height: 2rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .menu-toggle span {
+            width: 2rem;
+            height: 0.25rem;
+            background: white;
+            border-radius: 10px;
+            transition: all 0.3s linear;
+            position: relative;
+            transform-origin: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, var(--light) 0%, white 100%);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .teacher-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--primary);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .about-content {
+            flex: 2;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .qualifications {
+            margin: 1.5rem 0;
+        }
+
+        .qualifications li {
+            margin-bottom: 0.5rem;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .qualifications li i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+
+        /* Subjects Section */
+        .subjects {
+            padding: 5rem 0;
+            background: var(--cream);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .subject-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .subject-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .subject-icon {
+            background: linear-gradient(135deg, var(--primary) 0%, #0d3e9e 100%);
+            color: white;
+            font-size: 2rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .subject-content {
+            padding: 1.5rem;
+        }
+
+        .subject-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, white 0%, var(--cream) 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border-left: 4px solid var(--accent);
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.1;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .student-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .student-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Fees Section */
+        .fees {
+            padding: 5rem 0;
+            background: var(--cream);
+        }
+
+        .fees-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--gold-light);
+        }
+
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .fee-item:last-child {
+            border-bottom: none;
+        }
+
+        .fee-amount {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--secondary) 0%, #111827 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--accent);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.15);
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--secondary) 0%, #111827 100%);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success message */
+        .success-message {
+            background-color: var(--success);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+            
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .teacher-img {
+                min-height: 300px;
+            }
+        }
+
+        /* Premium text selection color */
+        ::selection {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0d3e9e;
+        }
     </style>
 </head>
 <body>
@@ -569,8 +633,13 @@ footer {
             <div class="logo">
                 <h1>SMART<span>LEARN</span>ACADEMY</h1>
             </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
-                <ul>
+                <ul id="navMenu">
                     <li><a href="#about">About</a></li>
                     <li><a href="#subjects">Subjects</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
@@ -594,7 +663,7 @@ footer {
     <section id="about" class="about">
         <div class="container about-container">
             <div class="teacher-img">
-                <img src="C:\Users\boser\OneDrive\Desktop\smartlearn-website\images\ratnadeep.png" alt="Ratnadeep Bose">
+                <p>Teacher's Image</p>
             </div>
             <div class="about-content">
                 <h2>About Me</h2>
@@ -607,12 +676,11 @@ footer {
                     <li><i class="fas fa-graduation-cap"></i> 5+ years of teaching experience</li>
                     <li><i class="fas fa-graduation-cap"></i> Certified in Advanced Teaching Methodology</li>                   
                     <li>
-                    <i class="fas fa-graduation-cap"></i>
-                    <a href="https://ratnadeepbose.github.io/profile/" target="_blank" style="color: inherit; text-decoration: underline;">
-                    know more about me
-                    </a>
+                        <i class="fas fa-graduation-cap"></i>
+                        <a href="https://ratnadeepbose.github.io/profile/" target="_blank" style="color: inherit; text-decoration: underline;">
+                            Know more about me
+                        </a>
                     </li>
-
                 </ul>
                 
                 <p>My teaching approach focuses on building strong fundamentals, encouraging critical thinking, and making learning enjoyable. I believe every student has unique potential, and my goal is to help them unlock it.</p>
@@ -683,7 +751,7 @@ footer {
                     </div>
                     <div class="student-info">
                         <div class="student-avatar">
-                            <img src="https://plus.unsplash.com/premium_photo-1682089892133-556bde898f2c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwYm95fGVufDB8fDB8fHww" alt="Student">
+                            R
                         </div>
                         <div>
                             <h4>Rahul Sharma</h4>
@@ -698,7 +766,7 @@ footer {
                     </div>
                     <div class="student-info">
                         <div class="student-avatar">
-                            <img src="https://plus.unsplash.com/premium_photo-1682089810582-f7b200217b67?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D" alt="Student">
+                            P
                         </div>
                         <div>
                             <h4>Priya Patel</h4>
@@ -713,7 +781,7 @@ footer {
                     </div>
                     <div class="student-info">
                         <div class="student-avatar">
-                            <img src="https://media.istockphoto.com/id/1361217794/photo/portrait-of-happy-teenage-boy-at-park.jpg?s=612x612&w=0&k=20&c=SBVTqRcY7kbe6LpvlDWskCHZqZ_LWjrL1XgA15d2np0=" alt="Student">
+                            A
                         </div>
                         <div>
                             <h4>Arjun Das</h4>
@@ -740,8 +808,6 @@ footer {
                     <div class="fee-class">Classes 9-12</div>
                     <div class="fee-amount">₹500/subject</div>
                 </div>
-            
-               
             </div>
             <p style="text-align: center; margin-top: 2rem;">Free trial class available! Contact for more details.</p>
         </div>
@@ -821,7 +887,10 @@ footer {
                         <label for="message">Message</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
-                    <button type="submit" class="btn">Submit Enquiry</button>
+                    <button type="submit" class="btn" id="submitBtn">Submit Enquiry</button>
+                    <div class="success-message" id="successMessage">
+                        Thank you for your enquiry! We'll contact you shortly.
+                    </div>
                 </form>
             </div>
         </div>
@@ -856,8 +925,8 @@ footer {
                 <h3>Contact Info</h3>
                 <ul class="footer-links">
                     <li><i class="fas fa-map-marker-alt"></i> Raikatpara, Jalpaiguri, WB</li>
-                    <li><i class="fas fa-phone"></i> +91 98765 43210</li>
-                    <li><i class="fas fa-envelope"></i> ratnadeep.bose@smartlearnacademy.com</li>
+                    <li><i class="fas fa-phone"></i> +91 7001005520</li>
+                    <li><i class="fas fa-envelope"></i> ratnadeepbusiness321@gmail.com</li>
                 </ul>
             </div>
         </div>
@@ -868,41 +937,91 @@ footer {
     </footer>
 
     <script>
-        // Form submission handling
-       const form = document.getElementById('enquiryForm');
-    const formResponse = document.getElementById('formResponse');
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
         
-       const formData = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value,
-    class: document.getElementById('class').value,
-    subject: document.getElementById('subject').value,
-    message: document.getElementById('message').value
-};
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
 
-fetch('https://smartlearn-backend-08u8.onrender.com/enquiry', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formData)
-})
-.then(res => res.json())
-.then(data => {
-    alert(data.message);
-    document.getElementById('enquiryForm').reset();
-})
-.catch(err => {
-    console.error(err);
-    alert('Something went wrong. Try again later.');
-});
+        // Form submission handling
+        const form = document.getElementById('enquiryForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Show loading state
+            submitBtn.innerHTML = 'Submitting <span class="loading"></span>';
+            submitBtn.disabled = true;
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                class: document.getElementById('class').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            try {
+                const response = await fetch('https://smartlearn-backend-08u8.onrender.com/enquiry', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    alert('Error: ' + (data.message || 'Something went wrong'));
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Network error. Please try again later.');
+            } finally {
+                // Reset button state
+                submitBtn.innerHTML = 'Submit Enquiry';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for header height
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
