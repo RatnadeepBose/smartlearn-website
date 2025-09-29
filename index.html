@@ -6,7 +6,11 @@
     <title>SmartLearnAcademy - Quality Education in Raikatpara</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
+    </style>
+<link rel="icon" type="image/png" href="images/LOGO.png">
+<link rel="apple-touch-icon" href="images/LOGO.png">
+<style>
+
         :root {
             --primary: #1a56db;        /* Deep royal blue - conveys trust and excellence */
             --secondary: #1f2937;      /* Dark charcoal - sophisticated and professional */
@@ -951,7 +955,9 @@
     </footer>
 
     <script>
-    // Google Apps Script Configuration
+  
+
+// Google Apps Script Configuration
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby15Bm6xPcufIhhwXqHPjPJu0gj2N8djDL8MjZ3_6cCyECOdqWcCgTJ5UfTwCw1nIJg/exec';
 
 // Form submission handling
@@ -966,14 +972,22 @@ form.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
 
     const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
         studentClass: document.getElementById('class').value,
         subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value,
+        message: document.getElementById('message').value.trim(),
         website: 'Smart Learn Academy' // Identify which website sent this
     };
+
+    // Validation
+    if (!formData.name || !formData.email || !formData.phone || !formData.studentClass || !formData.subject) {
+        alert('Please fill all required fields');
+        submitBtn.innerHTML = 'Submit Enquiry';
+        submitBtn.disabled = false;
+        return;
+    }
 
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -986,7 +1000,7 @@ form.addEventListener('submit', async (e) => {
         // With 'no-cors' we assume success
         successMessage.innerHTML = `
             <strong>Thank you, ${formData.name}!</strong><br>
-            Your enquiry for <b>Class ${formData.studentClass}</b> – <b>${formData.subject.replace(/-/g, ' ')}</b> has been received.<br>
+            Your enquiry for <b>Class ${formData.studentClass}</b> – <b>${formatSubjectDisplay(formData.subject)}</b> has been received.<br>
             We will contact you at <b>${formData.phone}</b> or <b>${formData.email}</b>.
         `;
         successMessage.style.display = 'block';
@@ -995,7 +1009,7 @@ form.addEventListener('submit', async (e) => {
         setTimeout(() => (successMessage.style.display = 'none'), 6000);
 
     } catch (err) {
-        console.error(err);
+        console.error('Submission error:', err);
         // Even on error, show success (GAS usually works)
         successMessage.innerHTML = `
             <strong>Thank you, ${formData.name}!</strong><br>
@@ -1009,6 +1023,21 @@ form.addEventListener('submit', async (e) => {
         submitBtn.disabled = false;
     }
 });
+
+// Helper function to format subject names for display
+function formatSubjectDisplay(subject) {
+    const subjectMap = {
+        'english-language': 'English Language',
+        'english-literature': 'English Literature', 
+        'history': 'History',
+        'geography': 'Geography',
+        'multiple': 'Multiple Subjects'
+    };
+    return subjectMap[subject] || subject;
+}
+
+
+
     </script>
     
             <script src="https://www.noupe.com/embed/01998538eb6272048b58cf4d33448bd6f5d2.js"></script>
